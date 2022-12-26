@@ -27,58 +27,58 @@ const Edit = () => {
     })
   }
 
-  const {id} = useParams("") 
+  const { id } = useParams("")
 
   const getData = async (e) => {
 
-    const res = await fetch(`https://app-crud-react-js.herokuapp.com/viewdetails/${id}`, {
-        method: "GET",
-        headers: {
-            "Content-Type": "application/json"
-        }
+    const res = await fetch(`http://localhost:5001/viewdetails/${id}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json"
+      }
     })
 
     const data = await res.json()
     console.log(data)
 
     if (res.status === 404 || !data) {
-        console.log("error");
+      console.log("error");
     } else {
       setInput(data)
-        console.log(data);
+      console.log(data);
     }
 
-}
-useEffect(() => {
+  }
+  useEffect(() => {
     getData()
-}, [])
+  }, [])
 
-  const updateUser = async(e)=>{
+  const updateUser = async (e) => {
     e.preventDefault();
 
-    const {name,email,work,add,mobile,desc,age} = input;
+    const { name, email, work, add, mobile, desc, age } = input;
 
-    const res2 = await fetch(`https://app-crud-react-js.herokuapp.com/updateuser/${id}`,{
-        method: "PATCH",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body:JSON.stringify({
-            name,email,work,add,mobile,desc,age
-        })
+    const res2 = await fetch(`http://localhost:5001/updateuser/${id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        name, email, work, add, mobile, desc, age
+      })
     });
 
     const data2 = await res2.json();
     console.log(data2);
 
-    if(res2.status === 404 || !data2){
-        alert("fill the data");
-    }else{
-        alert("data updated")
-        navigate('/')
+    if (res2.status === 404 || !data2) {
+      alert("fill the data");
+    } else {
+      alert("data updated")
+      navigate('/')
     }
 
-}
+  }
 
 
   return (

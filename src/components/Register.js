@@ -1,9 +1,9 @@
-import React, { useState} from 'react'
+import React, { useState } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
 
 const Register = () => {
-  
-   
+
+
   const navigate = useNavigate()
 
   const [input, setInput] = useState({
@@ -32,7 +32,7 @@ const Register = () => {
 
     const { name, email, age, mobile, work, add, desc } = input
 
-    const res = await fetch('https://app-crud-react-js.herokuapp.com/register', {
+    const res = await fetch('http://localhost:5001/register', {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

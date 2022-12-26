@@ -13,7 +13,7 @@ const Home = () => {
 
     const getData = async (e) => {
 
-        const res = await fetch('https://app-crud-react-js.herokuapp.com/getdata', {
+        const res = await fetch('http://localhost:5001/getdata', {
             method: "GET",
             headers: {
                 "Content-Type": "application/json"
@@ -36,7 +36,7 @@ const Home = () => {
     }, [])
 
     const deleteUser = async (id) => {
-        const res2 = await fetch(`https://app-crud-react-js.herokuapp.com/deleteuser/${id}`, {
+        const res2 = await fetch(`http://localhost:5001/deleteuser/${id}`, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json"

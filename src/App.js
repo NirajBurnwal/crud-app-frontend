@@ -11,6 +11,7 @@ import Register from './components/Register';
 import Edit from './components/Edit';
 import Details from './components/Details';
 
+
 function App() {
   return (
     <>
