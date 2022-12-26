@@ -1,5 +1,5 @@
 import React from 'react';
-import {Route, Routes} from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 import './App.css';
 
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css"
@@ -15,13 +15,13 @@ import Details from './components/Details';
 function App() {
   return (
     <>
-    <Navbar />
-    <Routes>
-      <Route path='/' element={<Home />} />
-      <Route path='/register' element={<Register />} />
-      <Route path='/edit/:id' element={<Edit />} />
-      <Route path='/view/:id' element={<Details />} />
-    </Routes>
+      <Navbar />
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/register' element={<Register />} />
+        <Route path='/edit/:id' element={<Edit />} />
+        <Route path='/view/:id' element={<Details />} />
+      </Routes>
     </>
   );
 }

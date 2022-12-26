@@ -31,7 +31,7 @@ const Edit = () => {
 
   const getData = async (e) => {
 
-    const res = await fetch(`http://localhost:5001/viewdetails/${id}`, {
+    const res = await fetch(`https://crud-server-8fzm.onrender.com/viewdetails/${id}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json"
@@ -58,7 +58,7 @@ const Edit = () => {
 
     const { name, email, work, add, mobile, desc, age } = input;
 
-    const res2 = await fetch(`http://localhost:5001/updateuser/${id}`, {
+    const res2 = await fetch(`https://crud-server-8fzm.onrender.com/updateuser/${id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json"
